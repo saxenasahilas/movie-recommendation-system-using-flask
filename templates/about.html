@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/aboutmovies.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h2>LET US KNOW ONCE</h2>
+              <span class="subheading">WE'LL LET YOU KNOW FOREVER</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <p><B>WE RECOMMEND is a free web-based film recommendation service. You can watch random movie trailers instantly, no need to login.
+
+Set your filters according to your mood and let our engine suggest you movies.</p>
+        </div>
+      </div>
+    </div>
+
+   {% endblock %}

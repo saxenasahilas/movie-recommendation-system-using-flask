@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- Page Header -->
+      <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/recommend.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h2>AT YOUR SERVICE</h2>
+              <span class="subheading">"{{movie}}" is a great choice.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p></p>
+          <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+          <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+          <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+          {% if t=='s' %}
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h3 style="color:rgb(0, 102, 255)">Sorry! This movie is not in our database.</h3>
+    <h3 style="color:rgb(0, 102, 255)">Please check if you spelled it correct.</h3>
+    <h3 style="color:rgb(0, 102, 255)">Or try with another movie.</h3>
+  </div>
+
+  {% else %}
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h1 style="color:rgb(0, 102, 255)"></h1>
+    <h3 >Here are some more like this</h3>
+  </div>
+
+    <ul class="list-group list-group-flush">
+      {% for m in r %}
+        <li class="list-group-item"> {{m|capitalize}}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+        </div>
+      </div>
+    </div>
+
+   {% endblock %}
